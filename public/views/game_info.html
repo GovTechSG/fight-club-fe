@@ -1,0 +1,63 @@
+<div class="row">
+    <div id="red_team" class="card col-sm-6">
+        <div class="card-title" style="text-align:center;">
+            <h2>Red Team</h2>
+        </div>
+        <div class="card-body">
+            <div class="m-2 col-sm-12">
+                <div class="progress" style="height: 30px;">
+                    <div id="red_team_hp"
+                         class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                         role="progressbar"
+                         aria-valuenow="0"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+                    </div>
+                    <div id="red_team_hp_fill"
+                         class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                         role="progressbar"
+                         aria-valuenow="0"
+                         aria-valuemin="0"
+                         aria-valuemax="100"
+                         style="opacity: 0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="blue_team" class="card col-sm-6">
+        <div class="card-title" style="text-align:center;">
+            <h2>Blue Team</h2>
+        </div>
+        <div class="card-body">
+            <div class="m-2 col-sm-12">
+                <div class="progress" style="height: 30px;">
+                    <div id="blue_team_hp_fill"
+                         class="progress-bar progress-bar-striped progress-bar-animated"
+                         role="progressbar"
+                         aria-valuenow="0"
+                         aria-valuemin="0"
+                         aria-valuemax="100"
+                         style="opacity: 0">
+                    </div>
+                    <div id="blue_team_hp"
+                         class="progress-bar progress-bar-striped progress-bar-animated"
+                         role="progressbar"
+                         aria-valuenow="0"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="winner" class="win_text hidden row">
+    <div class="col-sm-12" style="text-align:center;">
+        <div class="m-2 card-title">
+            <h2>WINNER</h2>
+            <h2 id="team_name"></h2>
+        </div>
+    </div>
+</div>

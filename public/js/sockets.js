@@ -1,5 +1,5 @@
 (function() {
-console.log(APP_PARAMS);
+
     var connectionMethod = _.isNil(APP_PARAMS.GAME_SERVER_CONNECTION_METHOD) ? 'poll' : APP_PARAMS.GAME_SERVER_CONNECTION_METHOD;
     if (connectionMethod !== 'socket') {
         // Not socket method, return immediately
@@ -7,18 +7,15 @@ console.log(APP_PARAMS);
     }
     console.log('Using socket method');
 
-    let serverProtocol = APP_PARAMS.GAME_SERVER_PROTOCOL;
-    let serverHost = APP_PARAMS.GAME_SERVER_HOST;
-    let serverPort = APP_PARAMS.GAME_SERVER_PORT;
-    let serverUrl = serverProtocol + '://' + serverHost + ":" + serverPort;
-
     let update = function (data) {
+
+        console.log('update----');
+        console.log(data);
 
         let blue_team_hp = _.get(data, ['blue_team', 'hp']);
         let red_team_hp = _.get(data, ['red_team', 'hp']);
         let blue_team_starting_hp = _.get(data, ['blue_team', 'starting_hp']);
         let red_team_starting_hp = _.get(data, ['red_team', 'starting_hp']);
-
 
         $('#blue_team_hp')
             .css('width', _.toString(_.toInteger(blue_team_hp / blue_team_starting_hp * 100)) + '%')
@@ -55,10 +52,10 @@ console.log(APP_PARAMS);
 
 
         let $winner = $('#winner');
-        let $winnerTitle = $winner.find('h2');
+        let $winnerTitle = $winner.find('#team_name');
 
         if (data.winner) {
-            $winnerTitle.html('Winner: ' + (data.winner === 'red_team' ? 'Red Team' : 'Blue Team'));
+            $winnerTitle.html((data.winner === 'red_team' ? 'Red Team' : 'Blue Team'));
             $winner.toggleClass('hidden', false);
         } else {
             $winner.toggleClass('hidden', true);
@@ -66,13 +63,18 @@ console.log(APP_PARAMS);
         }
     };
 
-
     $(function () {
 
         var poll = 0;
 
-        var socket = io.connect({path: serverUrl + '/sockets'});
+        let serverProtocol = APP_PARAMS.GAME_SERVER_PROTOCOL;
+        let serverHost = APP_PARAMS.GAME_SERVER_HOST;
+        let serverPort = APP_PARAMS.GAME_SERVER_PORT;
+        let serverUrl = serverProtocol + '://' + serverHost + ":" + serverPort;
 
+        console.log('Connecting to socket ' + serverUrl + '/sockets');
+        var socket = io(serverUrl, {path: '/sockets'});
+        console.log('Connected ' + socket.connected);
 
         socket.on('update', update);
 
@@ -91,20 +93,20 @@ console.log(APP_PARAMS);
                 $errorText.html('');
             }, 5000);
 
-
         });
 
         $('#reset_game').on('click', function () {
             socket.emit('newGame');
         });
 
-        $('#blue_team_hit, #red_team_hit').on('click', function () {
+        $('body').on('click', '#blue_team_hit, #red_team_hit', function (evt) {
+
             let $this = $(this);
             let team = $this.data('team');
 
             socket.emit('hit', {team: team});
-        });
 
+        });
 
     });
 })();

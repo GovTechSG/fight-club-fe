@@ -1,0 +1,40 @@
+<div id="red_team_hit" data-team="red">
+    <h1 class="hidden" style="text-align:center;color:white;">PRESS TO HIT!</h1>
+</div>
+<div id="blue_team_hit" data-team="blue">
+    <h1 class="hidden" style="text-align:center;color:white;">PRESS TO HIT!</h1>
+</div>
+<script>
+    $('#hit_area').on('mouseover', '#blue_team_hit', function() {
+        console.log('mouseover');
+        $('#blue_team_hit > h1').toggleClass('hidden', false);
+        $('#blue_team_hit').toggleClass('hit_highlight', true);
+    });
+    $('#hit_area').on('mouseleave', '#blue_team_hit', function() {
+        console.log('mouseleave');
+        $('#blue_team_hit > h1').toggleClass('hidden', true);
+        $('#blue_team_hit').toggleClass('hit_highlight', false);
+    });
+    $('#hit_area').on('mousedown', '#blue_team_hit', function() {
+        $('#blue_team_hit').toggleClass('hit_activated', true);
+    });
+    $('#hit_area').on('mouseup', '#blue_team_hit', function() {
+        $('#blue_team_hit').toggleClass('hit_activated', false);
+    });
+
+    $('#hit_area').on('mouseover', '#red_team_hit', function() {
+        $('#red_team_hit > h1').toggleClass('hidden', false);
+        $('#red_team_hit').toggleClass('hit_highlight', true);
+    });
+    $('#hit_area').on('mouseleave', '#red_team_hit', function() {
+        $('#red_team_hit > h1').toggleClass('hidden', true);
+        $('#red_team_hit').toggleClass('hit_highlight', false);
+    });
+    $('#hit_area').on('mousedown', '#red_team_hit', function() {
+        $('#red_team_hit').toggleClass('hit_activated', true);
+    });
+    $('#hit_area').on('mouseup', '#red_team_hit', function() {
+        $('#red_team_hit').toggleClass('hit_activated', false);
+    });
+
+</script>

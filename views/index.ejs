@@ -25,97 +25,29 @@
 </head>
 <body>
 
+<div id="hit_area"></div>
+<script>
+    $(function() {
+        $('#hit_area').load('views/hit_area.html');
+    });
+</script>
 
 <div class="container">
     <div id="content">
-        <div id="game_info">
-            <div class="row">
-                <div id="red_team" class="card col-6">
-                    <div class="m-2 card-title">
-                        <h2>Red Team</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="m-2 progress" style="height: 30px;">
-                            <div id="red_team_hp"
-                                 class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-                                 role="progressbar"
-                                 aria-valuenow="0"
-                                 aria-valuemin="0"
-                                 aria-valuemax="100"
-                            ></div>
-                            <div id="red_team_hp_fill"
-                                 class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-                                 role="progressbar"
-                                 aria-valuenow="0"
-                                 aria-valuemin="0"
-                                 aria-valuemax="100"
-                                 style="opacity: 0"
-                            ></div>
-                        </div>
-
-                        <button class="m-2 btn btn-danger btn-lg btn-block" id="blue_team_hit" data-team="red">Hit
-                        </button>
-                    </div>
-                </div>
-                <div id="blue_team" class="card col-6">
-                    <div class="m-2 card-title">
-                        <h2>Blue Team</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="m-2 progress" style="height: 30px;">
-                            <div id="blue_team_hp_fill"
-                                 class="progress-bar progress-bar-striped progress-bar-animated"
-                                 role="progressbar"
-                                 aria-valuenow="0"
-                                 aria-valuemin="0"
-                                 aria-valuemax="100"
-                                 style="opacity: 0"
-                            ></div>
-                            <div id="blue_team_hp"
-                                 class="progress-bar progress-bar-striped progress-bar-animated"
-                                 role="progressbar"
-                                 aria-valuenow="0"
-                                 aria-valuemin="0"
-                                 aria-valuemax="100"
-                            ></div>
-                        </div>
-
-                        <button class="m-2 btn btn-primary btn-lg btn-block" id="red_team_hit" data-team="blue">Hit
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="winner" class="hidden">
-                <div class="row">
-                    <div class="card col-12">
-                        <div class="m-2 card-title">
-                            <h2></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div id="error" class="hidden">
-                <div class="alert alert-danger col-12" role="alert">
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="card col-12">
-                    <img src="/img/Health_Bar_BG.svg" class="mx-auto" style="width:80%; ">
-                    <img id="blue_team_hp_bar" src="/img/Blue_Bar.svg" style="position:relative; width:32%; top: -45%; left: 13%;">
-                    <img id="red_team_hp_bar" src="/img/Red_Bar.svg" style="position:relative; width:32%; top: -54%; left: 55%;">
-                </div>
-
-            </div>
-
-        </div>
-
-
+        <div id="game_info"></div>
+        <script>
+            $(function() {
+                $('#game_info').load('views/game_info.html');
+            });
+        </script>
     </div>
+    <!--<div class="row">-->
+        <!--<div class="card col-12">-->
+            <!--<img src="/img/Health_Bar_BG.svg" class="mx-auto" style="width:80%; ">-->
+            <!--<img id="blue_team_hp_bar" src="/img/Blue_Bar.svg" style="position:relative; width:32%; top: -45%; left: 13%;">-->
+            <!--<img id="red_team_hp_bar" src="/img/Red_Bar.svg" style="position:relative; width:32%; top: -54%; left: 55%;">-->
+        <!--</div>-->
+    <!--</div>-->
 </div>
 
 </body>

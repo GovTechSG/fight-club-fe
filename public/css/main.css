@@ -1,3 +1,38 @@
-body > .container {
-    padding-top: 60px;
+.container {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#red_team_hit {
+    width: 50vw;
+    height: 100vh;
+    float: left;
+    background-color: #c00000;
+    cursor: pointer;
+}
+
+#blue_team_hit {
+    width: 50vw;
+    height: 100vh;
+    float: right;
+    background-color: #0000d3;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.hit_highlight {
+    opacity: 0.85;
+}
+
+.hit_activated {
+    opacity: 1.0;
+}
+
+.win_text {
+    color: white;
 }
