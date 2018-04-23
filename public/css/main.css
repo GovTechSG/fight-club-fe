@@ -1,8 +1,42 @@
+.red_team_card {
+    background-color: darkred;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.blue_team_card {
+    background-color: darkblue;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.card-title {
+    margin-bottom: 0;
+}
+
+.card-body {
+    padding: 0;
+}
+
 .container {
+    max-width: 80%;
     position: absolute;
-    top: 15%;
+    top: 0;
     left: 50%;
     transform: translate(-50%, 0%);
+}
+
+.red_team_progress {
+    height: 100px;
+    margin-right: -31px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.blue_team_progress {
+    height: 100px;
+    margin-left: -31px;
+    border-radius: 0px 5px 5px 0px;
+    border-left: 1px solid black;
 }
 
 #red_team_hit {
@@ -19,6 +53,18 @@
     float: right;
     background-color: #0000d3;
     cursor: pointer;
+}
+
+.hit_text {
+    text-align: center;
+    color: white;
+    user-select: none;
+    margin-top: 75vh;
+    font-size: 50pt
+}
+
+.hit_text_hightlight {
+    color: black;
 }
 
 .hidden {

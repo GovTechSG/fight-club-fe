@@ -1,17 +1,18 @@
 <div class="row">
-    <div id="red_team" class="card col-sm-6">
-        <div class="card-title" style="text-align:center;">
+    <div id="red_team" class="card col-sm-6 red_team_card">
+        <div class="card-title" style="text-align:center;user-select:none;color:#b0b0b0;">
             <h2>Red Team</h2>
         </div>
         <div class="card-body">
-            <div class="m-2 col-sm-12">
-                <div class="progress" style="height: 30px;">
+            <div class="col-sm-12" style="padding-bottom:20px;">
+                <div class="progress red_team_progress">
                     <div id="red_team_hp"
                          class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
                          role="progressbar"
                          aria-valuenow="0"
                          aria-valuemin="0"
-                         aria-valuemax="100">
+                         aria-valuemax="100"
+                        style="font-size:20pt;user-select:none;">
                     </div>
                     <div id="red_team_hp_fill"
                          class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
@@ -25,13 +26,13 @@
             </div>
         </div>
     </div>
-    <div id="blue_team" class="card col-sm-6">
-        <div class="card-title" style="text-align:center;">
+    <div id="blue_team" class="card col-sm-6 blue_team_card">
+        <div class="card-title" style="text-align:center;user-select:none;color:#b0b0b0;">
             <h2>Blue Team</h2>
         </div>
         <div class="card-body">
-            <div class="m-2 col-sm-12">
-                <div class="progress" style="height: 30px;">
+            <div class="col-sm-12" style="padding-bottom:20px;">
+                <div class="progress blue_team_progress">
                     <div id="blue_team_hp_fill"
                          class="progress-bar progress-bar-striped progress-bar-animated"
                          role="progressbar"
@@ -45,7 +46,8 @@
                          role="progressbar"
                          aria-valuenow="0"
                          aria-valuemin="0"
-                         aria-valuemax="100">
+                         aria-valuemax="100"
+                         style="font-size:20pt;user-select:none;">
                     </div>
                 </div>
             </div>
@@ -54,10 +56,10 @@
 </div>
 
 <div id="winner" class="win_text hidden row">
-    <div class="col-sm-12" style="text-align:center;">
+    <div class="col-sm-12" style="text-align:center;user-select:none;">
         <div class="m-2 card-title">
-            <h2>WINNER</h2>
-            <h2 id="team_name"></h2>
+            WINNER
+            <h1 id="team_name"></h1>
         </div>
     </div>
 </div>
