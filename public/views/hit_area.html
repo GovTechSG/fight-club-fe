@@ -1,22 +1,24 @@
 <div id="red_team_hit" data-team="red">
-    <h1 class="hit_text hidden">PRESS TO ATTACK!</h1>
+    <h1 class="hit_text invisible">TAP TO ATTACK!</h1>
+    <div class="red_team_hit_bg"></div>
 </div>
 <div id="blue_team_hit" data-team="blue">
-    <h1 class="hit_text hidden">PRESS TO ATTACK!</h1>
+    <h1 class="hit_text invisible">TAP TO ATTACK!</h1>
+    <div class="blue_team_hit_bg"></div>
 </div>
 <script>
     $('#hit_area').on('mouseover', '#blue_team_hit', function() {
         if (!$('#winner').hasClass('hidden')) {
             return;
         }
-        $('#blue_team_hit > h1').toggleClass('hidden', false);
+        $('#blue_team_hit > h1').toggleClass('invisible', false);
         $('#blue_team_hit').toggleClass('hit_highlight', true);
     });
     $('#hit_area').on('mouseleave', '#blue_team_hit', function() {
         if (!$('#winner').hasClass('hidden')) {
             return;
         }
-        $('#blue_team_hit > h1').toggleClass('hidden', true);
+        $('#blue_team_hit > h1').toggleClass('invisible', true);
         $('#blue_team_hit').toggleClass('hit_highlight', false);
     });
     $('#hit_area').on('mousedown', '#blue_team_hit', function() {
@@ -38,14 +40,14 @@
         if (!$('#winner').hasClass('hidden')) {
             return;
         }
-        $('#red_team_hit > h1').toggleClass('hidden', false);
+        $('#red_team_hit > h1').toggleClass('invisible', false);
         $('#red_team_hit').toggleClass('hit_highlight', true);
     });
     $('#hit_area').on('mouseleave', '#red_team_hit', function() {
         if (!$('#winner').hasClass('hidden')) {
             return;
         }
-        $('#red_team_hit > h1').toggleClass('hidden', true);
+        $('#red_team_hit > h1').toggleClass('invisible', true);
         $('#red_team_hit').toggleClass('hit_highlight', false);
     });
     $('#hit_area').on('mousedown', '#red_team_hit', function() {

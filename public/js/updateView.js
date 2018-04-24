@@ -42,6 +42,10 @@ var updateView = function (data) {
     $('#red_team_hp').css('font-size', redFontSize);
     var blueFontSize = _.toString((blue_team_hp / blue_team_starting_hp * 30) + 10) + 'pt';
     $('#blue_team_hp').css('font-size', blueFontSize);
+    var redBloodOpacity = _.toString(1.0 - (red_team_hp / red_team_starting_hp));
+    $('.red_team_hit_bg').css('opacity', redBloodOpacity);
+    var blueBloodOpacity = _.toString(1.0 - (blue_team_hp / blue_team_starting_hp));
+    $('.blue_team_hit_bg').css('opacity', blueBloodOpacity);
 
     let $winner = $('#winner');
     let $winnerTitle = $winner.find('#team_name');
@@ -50,12 +54,12 @@ var updateView = function (data) {
         $winnerTitle.html((data.winner === 'red_team' ? 'Red Team' : 'Blue Team'));
         $winner.toggleClass('hidden', false);
 
-        $('#blue_team_hit > h1').toggleClass('hidden', true);
+        $('#blue_team_hit > h1').toggleClass('invisible', true);
         $('#blue_team_hit').toggleClass('hit_highlight', false);
         $('#blue_team_hit').toggleClass('hit_activated', false);
         $('#blue_team_hit > .hit_text').toggleClass('hit_text_hightlight', false);
 
-        $('#red_team_hit > h1').toggleClass('hidden', true);
+        $('#red_team_hit > h1').toggleClass('invisible', true);
         $('#red_team_hit').toggleClass('hit_highlight', false);
         $('#red_team_hit').toggleClass('hit_activated', false);
         $('#red_team_hit > .hit_text').toggleClass('hit_text_hightlight', false);
