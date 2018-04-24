@@ -16,5 +16,5 @@ WORKDIR /usr/src/app
 
 EXPOSE 5999
 
-CMD node bin/www.js
+CMD node bin/www
 
