@@ -14,5 +14,7 @@ RUN npm install --no-optional --production
 
 WORKDIR /usr/src/app
 
+EXPOSE 5999
+
 CMD node bin/www.js
 
