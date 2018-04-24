@@ -2,7 +2,7 @@ FROM node:8
 
 WORKDIR /usr/src/app
 
-COPY . ${WORKDIR}
+COPY . /usr/src/app
 
 # Express server packages
 RUN npm install --no-optional --production
