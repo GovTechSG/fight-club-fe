@@ -48,7 +48,7 @@
             let $this = $(this);
             let team = $this.data('team');
 
-            socket.emit('hit', {team: team});
+            socket.emit('attack', {team: team});
 
         });
 

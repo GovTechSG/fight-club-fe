@@ -57,7 +57,7 @@
             var data = new FormData();
             data.append('team', team);
 
-            $.ajax(serverUrl + '/game/hit', {
+            $.ajax(serverUrl + '/game/attack', {
                 method: 'POST',
                 data: data,
                 contentType: false,
