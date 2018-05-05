@@ -79,9 +79,10 @@
     text-align: center;
     color: white;
     user-select: none;
-    top: 65vh;
+    top: -40%;
     position: relative;
-    font-size: 50pt
+    font-size: 50pt;
+
 }
 
 .hit_text_hightlight {
