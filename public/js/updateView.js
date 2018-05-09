@@ -66,6 +66,7 @@ var updateView = function (data) {
         $('#red_team_hit > .hit_text').toggleClass('hit_text_hightlight', false);
     } else {
         $winner.toggleClass('hidden', true);
+        $('.wrapper-confetti').toggleClass('hidden', true);
         $winnerTitle.html('');
     }
 };
