@@ -4,6 +4,9 @@ This is the frontend web server (express) project for Fight Club.
 To run it:
 ```
 npm install
+cd public
+npm install
+cd ..
 npm start
 ```
 

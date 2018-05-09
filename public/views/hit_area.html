@@ -1,8 +1,16 @@
 <div id="red_team_hit" data-team="red">
+    <div class="orc-arm">
+        <div class="orc-body"></div>
+        <div class="orc-bg"></div>
+    </div>
     <h1 class="hit_text invisible">TAP TO ATTACK!</h1>
     <div class="red_team_hit_bg"></div>
 </div>
 <div id="blue_team_hit" data-team="blue">
+    <div class="hero-arm">
+        <div class="hero-body"></div>
+        <div class="hero-bg"></div>
+    </div>
     <h1 class="hit_text invisible">TAP TO ATTACK!</h1>
     <div class="blue_team_hit_bg"></div>
 </div>
@@ -13,6 +21,7 @@
         }
         $('#blue_team_hit > h1').toggleClass('invisible', false);
         $('#blue_team_hit').toggleClass('hit_highlight', true);
+
     });
     $('#hit_area').on('mouseleave', '#blue_team_hit', function() {
         if (!$('#winner').hasClass('hidden')) {
