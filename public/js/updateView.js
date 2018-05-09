@@ -51,8 +51,9 @@ var updateView = function (data) {
     let $winnerTitle = $winner.find('#team_name');
 
     if (data.winner) {
-        $winnerTitle.html((data.winner === 'red_team' ? 'Red Team' : 'Blue Team'));
+        $winnerTitle.html((data.winner === 'red_team' ? 'ORCS WIN!' : 'HEROES WIN!'));
         $winner.toggleClass('hidden', false);
+        $('.wrapper-confetti').toggleClass('hidden', false);
 
         $('#blue_team_hit > h1').toggleClass('invisible', true);
         $('#blue_team_hit').toggleClass('hit_highlight', false);

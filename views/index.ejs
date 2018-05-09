@@ -23,8 +23,22 @@
 </head>
 <body>
 
+<div id="winner" class="win_text hidden row">
+    <div class="col" style="text-align:center;user-select:none;">
+        <div class="m-2 card-title">
+            <h1 id="team_name"></h1>
+            <img src="/img/logo-nectar.png" alt="" width="20%" height="auto" style="margin: 30px 0 50px 0">
+            <h2>This demo is brought to you by NECTAR</h2>
+        </div>
+    </div>
+</div>
+
 <div class="logo">
     <img src="/img/logo-lotc.png" alt="" width="60%" height="auto">
+</div>
+
+<div class="wrapper-confetti hidden">
+    <div id="confetti-wrapper"></div>
 </div>
 
 <div id="hit_area"></div>
@@ -43,13 +57,6 @@
             });
         </script>
     </div>
-    <!--<div class="row">-->
-        <!--<div class="card col-12">-->
-            <!--<img src="/img/Health_Bar_BG.svg" class="mx-auto" style="width:80%; ">-->
-            <!--<img id="blue_team_hp_bar" src="/img/Blue_Bar.svg" style="position:relative; width:32%; top: -45%; left: 13%;">-->
-            <!--<img id="red_team_hp_bar" src="/img/Red_Bar.svg" style="position:relative; width:32%; top: -54%; left: 55%;">-->
-        <!--</div>-->
-    <!--</div>-->
 </div>
 
 </body>
@@ -57,5 +64,6 @@
 <script src="/js/updateView.js" type="text/javascript"></script>
 <script src="/js/sockets.js" type="text/javascript"></script>
 <script src="/js/polling.js" type="text/javascript"></script>
+<script src="/js/confetti.js" type="text/javascript"></script>
 
 </html>
