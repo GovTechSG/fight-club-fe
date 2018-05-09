@@ -27,7 +27,9 @@
     <div class="col" style="text-align:center;user-select:none;">
         <div class="m-2 card-title">
             <h1 id="team_name"></h1>
-            <img src="/img/logo-nectar.png" alt="" width="20%" height="auto" style="margin: 30px 0 50px 0">
+            <div class="nectar-logo-container">
+                <img class="nectar-logo" src="/img/logo-nectar.png" alt=""/>
+            </div>
             <h2>This demo is brought to you by NECTAR</h2>
         </div>
     </div>
@@ -65,5 +67,11 @@
 <script src="/js/sockets.js" type="text/javascript"></script>
 <script src="/js/polling.js" type="text/javascript"></script>
 <script src="/js/confetti.js" type="text/javascript"></script>
+
+<script>
+    $('.nectar-logo').click(function() {
+        window.location = 'https://portal.rpaas.gdshive.com';
+    });
+</script>
 
 </html>
