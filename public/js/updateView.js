@@ -51,6 +51,12 @@ var updateView = function (data) {
     let $winnerTitle = $winner.find('#team_name');
 
     if (data.winner) {
+
+        var index = Math.floor((Math.random() * 100 % 3)) + 1;
+        var soundFile = 'media/cheer.mp3';
+        var audio = new Audio(soundFile);
+        audio.play();
+
         $winnerTitle.html((data.winner === 'red_team' ? 'ORCS WIN!' : 'HEROES WIN!'));
         $winner.toggleClass('hidden', false);
         $('.wrapper-confetti').toggleClass('hidden', false);

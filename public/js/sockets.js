@@ -48,6 +48,11 @@
             let $this = $(this);
             let team = $this.data('team');
 
+            var index = Math.floor((Math.random() * 100 % 3)) + 1;
+            var soundFile = 'media/sword' + index + '.mp3';
+            var audio = new Audio(soundFile);
+            audio.play();
+
             socket.emit('attack', {team: team});
 
         });

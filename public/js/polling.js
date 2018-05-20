@@ -61,6 +61,11 @@
             var data = new FormData();
             data.append('team', team);
 
+            var index = Math.floor((Math.random() * 100 % 3)) + 1;
+            var soundFile = 'media/sword' + index + '.mp3';
+            var audio = new Audio(soundFile);
+            audio.play();
+
             $.ajax(serverUrl + '/game/attack', {
                 method: 'POST',
                 data: data,
