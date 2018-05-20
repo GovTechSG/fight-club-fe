@@ -17,19 +17,25 @@
         var poll = 0;
 
         var loop = function () {
-            $.ajax(serverUrl + '/game', {
+            console.log('Sending poll...');
+            $.ajax(serverUrl + '/game/poll', {
+                method: 'POST',
                 data: {poll: poll},
                 success: function (data) {
-                    updateView(data);
                     poll = 1;
-                    setTimeout(loop, 1000);
+                    updateView(data);
+                    console.log('Updated View');
+                    console.log(data);
+                    setTimeout(loop, 0);
                 },
                 error: function () {
                     poll = 0;
-                    setTimeout(loop, 1000);
+                    setTimeout(loop, 0);
                 }
             });
         };
+
+        loop();
 
 
         $('#reset_game').on('click', function () {
@@ -46,8 +52,6 @@
                 success: updateView
             })
         });
-
-        loop();
 
         $('body').on('click', '#blue_team_hit, #red_team_hit', function (evt) {
 
