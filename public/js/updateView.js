@@ -1,3 +1,4 @@
+var alreadyPlayedCheers = false;
 var updateView = function (data) {
 
     let blue_team_hp = _.get(data, ['blue_team', 'hp']);
@@ -52,10 +53,13 @@ var updateView = function (data) {
 
     if (data.winner) {
 
-        var index = Math.floor((Math.random() * 100 % 3)) + 1;
-        var soundFile = 'media/cheer.mp3';
-        var audio = new Audio(soundFile);
-        audio.play();
+        if (!alreadyPlayedCheers) {
+            alreadyPlayedCheers = true;
+            var soundFile = 'media/cheer.mp3';
+            var audio = new Audio(soundFile);
+            audio.loop = false;
+            audio.play();
+        }
 
         $winnerTitle.html((data.winner === 'red_team' ? 'ORCS WIN!' : 'HEROES WIN!'));
         $winner.toggleClass('hidden', false);
@@ -71,6 +75,7 @@ var updateView = function (data) {
         $('#red_team_hit').toggleClass('hit_activated', false);
         $('#red_team_hit > .hit_text').toggleClass('hit_text_hightlight', false);
     } else {
+        alreadyPlayedCheers = false;
         $winner.toggleClass('hidden', true);
         $('.wrapper-confetti').toggleClass('hidden', true);
         $winnerTitle.html('');
