@@ -56,9 +56,13 @@ var updateView = function (data) {
         if (!alreadyPlayedCheers) {
             alreadyPlayedCheers = true;
             var soundFile = 'media/cheer.mp3';
-            var audio = new Audio(soundFile);
-            audio.loop = false;
-            audio.play();
+            var cheerAudio = new Audio(soundFile);
+            cheerAudio.loop = false;
+            cheerAudio.play();
+            soundFile = 'media/tada.mp3';
+            var tadaAudio = new Audio(soundFile);
+            tadaAudio.loop = false;
+            tadaAudio.play();
         }
 
         $winnerTitle.html((data.winner === 'red_team' ? 'ORCS WIN!' : 'HEROES WIN!'));
