@@ -7,37 +7,37 @@ var updateView = function (data) {
     let red_team_starting_hp = _.get(data, ['red_team', 'starting_hp']);
 
     $('#blue_team_hp')
-        .css('width', _.toString(_.toInteger(blue_team_hp / blue_team_starting_hp * 100)) + '%')
+        .css('width', _.toString(_.toNumber(blue_team_hp / blue_team_starting_hp * 100)) + '%')
         .attr('aria-valuenow', _.toString(blue_team_hp))
         .attr('aria-valuemin', _.toString(0))
         .attr('aria-valuemax', _.toString(blue_team_starting_hp))
         .html(_.toString(blue_team_hp));
 
     $('#blue_team_hp_fill')
-        .css('width', _.toString(_.toInteger((blue_team_starting_hp - blue_team_hp) / blue_team_starting_hp * 100)) + '%')
+        .css('width', _.toString(_.toNumber((blue_team_starting_hp - blue_team_hp) / blue_team_starting_hp * 100)) + '%')
         .attr('aria-valuenow', _.toString(blue_team_starting_hp - blue_team_hp))
         .attr('aria-valuemin', _.toString(0))
         .attr('aria-valuemax', _.toString(blue_team_starting_hp))
         .html(_.toString(blue_team_starting_hp - blue_team_hp) + ' / ' + _.toString(blue_team_starting_hp));
 
     $('#red_team_hp')
-        .css('width', _.toString(_.toInteger(red_team_hp / red_team_starting_hp * 100)) + '%')
+        .css('width', _.toString(_.toNumber(red_team_hp / red_team_starting_hp * 100)) + '%')
         .attr('aria-valuenow', _.toString(red_team_hp))
         .attr('aria-valuemin', _.toString(0))
         .attr('aria-valuemax', _.toString(red_team_starting_hp))
         .html(_.toString(red_team_hp));
 
     $('#red_team_hp_fill')
-        .css('width', _.toString(_.toInteger((red_team_starting_hp - red_team_hp) / red_team_starting_hp * 100)) + '%')
+        .css('width', _.toString(_.toNumber((red_team_starting_hp - red_team_hp) / red_team_starting_hp * 100)) + '%')
         .attr('aria-valuenow', _.toString(red_team_starting_hp - red_team_hp))
         .attr('aria-valuemin', _.toString(0))
         .attr('aria-valuemax', _.toString(red_team_starting_hp))
         .html(_.toString(red_team_starting_hp - red_team_hp) + ' / ' + _.toString(red_team_starting_hp));
 
 
-    $('#blue_team_hp_bar').css('width', _.toString(_.toInteger(blue_team_hp / blue_team_starting_hp * 32)) + '%');
+    $('#blue_team_hp_bar').css('width', _.toString(_.toNumber(blue_team_hp / blue_team_starting_hp * 32)) + '%');
 
-    $('#red_team_hp_bar').css('width', _.toString(_.toInteger(red_team_hp / red_team_starting_hp * 32)) + '%');
+    $('#red_team_hp_bar').css('width', _.toString(_.toNumber(red_team_hp / red_team_starting_hp * 32)) + '%');
 
     var redFontSize = _.toString((red_team_hp / red_team_starting_hp * 30) + 10) + 'pt';
     $('#red_team_hp').css('font-size', redFontSize);
