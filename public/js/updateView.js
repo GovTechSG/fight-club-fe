@@ -6,6 +6,10 @@ var updateView = function (data) {
     let blue_team_starting_hp = _.get(data, ['blue_team', 'starting_hp']);
     let red_team_starting_hp = _.get(data, ['red_team', 'starting_hp']);
 
+    let gameStarted = _.get(data, 'started', false);
+    $('.start_game_button').prop('disabled', gameStarted);
+    $('.modal_bg').toggleClass('hidden', gameStarted);
+
     $('#blue_team_hp')
         .css('width', _.toString(_.toNumber(blue_team_hp / blue_team_starting_hp * 100)) + '%')
         .attr('aria-valuenow', _.toString(blue_team_hp))

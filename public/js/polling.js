@@ -50,7 +50,16 @@
                 contentType: false,
                 processData: false,
                 success: updateView
-            })
+            });
+        });
+
+        $('.start_game_button').on('click', function(evt) {
+            $.ajax(serverUrl + '/game/start', {
+                method: 'POST',
+                contentType: false,
+                processData: false,
+                success: updateView
+            });
         });
 
         $('body').on('click', '#blue_team_hit, #red_team_hit', function (evt) {

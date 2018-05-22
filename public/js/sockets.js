@@ -43,6 +43,10 @@
             socket.emit('newGame');
         });
 
+        $('.start_game_button').on('click', function(evt) {
+            socket.emit('startGame');
+        });
+
         $('body').on('click', '#blue_team_hit, #red_team_hit', function (evt) {
 
             let $this = $(this);
