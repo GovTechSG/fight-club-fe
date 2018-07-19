@@ -8,6 +8,33 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var isShuttingDown = false;
+var shutdown = function () {
+    isShuttingDown = true;
+    console.log("SHUTTING DOWN!!!!!");
+    process.exit(0);
+};
+
+console.log('Registering signals');
+var signalHandler = function(signal) {
+    console.log('Received ' + signal);
+    switch(signal) {
+        case 'SIGTERM':
+        case 'SIGINT': {
+            shutdown();
+            break;
+        }
+    }
+};
+var signalHandlerGenerator = function(signal) {
+  return function() {
+    signalHandler(signal);
+  };
+};
+process.on('SIGTERM', signalHandlerGenerator('SIGTERM'));
+process.on('SIGINT', signalHandlerGenerator('SIGINT'));
+process.on('SIGQUIT', signalHandlerGenerator('SIGQUIT'));
+
 var app = express();
 
 // view engine setup
